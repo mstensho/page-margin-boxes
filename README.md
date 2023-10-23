@@ -39,3 +39,5 @@ conversations?”
 So she was considering in her own mind (as well as she could, for the hot day
 [...]
 ```
+
+[page 1](alice-1.png)
