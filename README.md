@@ -1,4 +1,4 @@
-# page-margin-boxes
+# @page margin boxes
 
 Spec: https://www.w3.org/TR/css-page-3/#margin-boxes
 
