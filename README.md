@@ -40,4 +40,4 @@ So she was considering in her own mind (as well as she could, for the hot day
 [...]
 ```
 
-![page 1](alice-1.png)
+![page 1](alice-1.png) ![page 2](alice-2.png) ![page 3](alice-3.png) ![page 4](alice-4.png)
