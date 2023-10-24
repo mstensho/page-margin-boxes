@@ -59,4 +59,4 @@ Another use case: place a logo in the corner on every page:
 <div style="break-after:page;">This is page 2</div>
 ```
 
-!(logo.png)
+![output](logo.png)
