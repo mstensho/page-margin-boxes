@@ -1,6 +1,6 @@
 # @page margin boxes
 
-Morten Stenshorne <mstensho@chromium.org> October 2023.
+Morten Stenshorne \<mstensho@chromium.org\> October 2023.
 
 Spec: https://www.w3.org/TR/css-page-3/#margin-boxes
 
