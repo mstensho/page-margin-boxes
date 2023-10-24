@@ -4,7 +4,7 @@ Morten Stenshorne \<mstensho@chromium.org\> October 2023.
 
 Spec: https://www.w3.org/TR/css-page-3/#margin-boxes
 
-Page margin boxes can be used by authors to define content outside the page area, i.e. in the margin area. This is the area where the browser normally puts headers and footers (which typically may include the document title, URL, time stamp, page number and total number of pages). @page margin boxes enables an author to customize this part of the page - not just at the top and at the bottom, but also on the left and right sides, as well as in the corner. The spec defines 16 margin areas - 4 corners, and 3 parts (beginning, middle, end) on each of the 4 sides.
+Page margin boxes can be used in paged media (such as printing or when generating PDFs) by authors to define content outside the page area, i.e. in the margin area. This is the area where the browser normally puts headers and footers (which typically may include the document title, URL, time stamp, page number and total number of pages). @page margin boxes enables an author to customize this part of the page - not just at the top and at the bottom, but also on the left and right sides, as well as in the corner. The spec defines 16 margin areas - 4 corners, and 3 parts (beginning, middle, end) on each of the 4 sides.
 
 See the figure at https://www.w3.org/TR/css-page-3/#page-model
 
