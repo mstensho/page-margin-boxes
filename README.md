@@ -75,7 +75,7 @@ Most printers have an area on each side near the paper edge which is unprintable
 However, by making the entire page box (i.e. including the margins) available to the author, the author has no way of reliably avoiding the unprintable area. With this limitation, when printing the page, we're left with the following options:
 * Allow the margins' contents to end up being clipped by the unprintable area
 * The author to be conservative about how close to the paper edge margin content is placed
-* The page to be scaled to fit everything, including the margin boxes, within the actual printable area. This will in turn make things smaller than it was supposed to be, so that a centimeter is no longer a centimeter, but something slightly less.
+* The page to be scaled down to fit everything, including the margin boxes, within the actual printable area. This will in turn make things smaller than it was supposed to be, so that a centimeter is no longer a centimeter, but something slightly less.
 
 ### Custom headless headers / footers?
 
