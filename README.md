@@ -70,7 +70,12 @@ The spec defines the counter names 'page' and 'pages'. Both are accessible by th
 
 ### Unprintable area
 
-Most printers have an area each side near the paper edge which is unprintable. This is not exposed to CSS in any way, so, by using the entire page box, the author has no way of avoiding the unprintable area. When printing the page, the margins will either end up being clipped by the unprintable area, or the page can be scaled to fit everything, including the margin boxes, within the actual printing area.
+Most printers have an area on each side near the paper edge which is unprintable, usually due to the paper handling mechanics of the device. These areas are not exposed to CSS in any way. Instead, the browser usually makes sure that the default margins are large enough to avoid this area for the page area (and with any luck, fit the browser-generated headers and footers in the margin area).
+
+However, by making the entire page box (i.e. including the margins) available to the author, the author has no way of reliably avoiding the unprintable area. With this limitation, when printing the page, we're left with the following options:
+* Allow the margins' contents to end up being clipped by the unprintable area
+* The author to be conservative about how close to the paper edge margin content is placed
+* The page to be scaled to fit everything, including the margin boxes, within the actual printable area. This will in turn make things smaller than it was supposed to be, so that a centimeter is no longer a centimeter, but something slightly less.
 
 ### Custom headless headers / footers?
 
@@ -82,3 +87,5 @@ Most browsers offer to generate some default headers and footers, and they are u
 * on (as described above; suppress user agent headers if there are margin box at-rules)
 * user agent headers / footers only
 * author headers / footers only
+
+### CSSOM
