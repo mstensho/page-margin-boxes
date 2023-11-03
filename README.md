@@ -17,7 +17,6 @@ See the figure at https://www.w3.org/TR/css-page-3/#page-model
 One of the most interesting use cases for this is for authors to specify their own headers and footers, including page numbering; see https://www.w3.org/TR/css-page-3/#page-based-counters
 
 Currently, no web browser is known to support this, but it is supported by the Prince XML PDF generator.
-On that note: Many PDF screenshots in this document are captured using the Prince XML evaluation copy, which places its own logo in the top right corner of the first page.
 
 ```html
 <!DOCTYPE html>
