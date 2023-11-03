@@ -87,6 +87,10 @@ Note that page or page margin properties are not inherited by the elements in th
       color: hotpink;
       content: "This is hotpink.";
     }
+
+    @bottom-center {
+      content: "This is blue.";
+    }
   }
 </style>
 <div>This is blue.</div>
