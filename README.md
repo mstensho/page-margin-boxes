@@ -106,7 +106,7 @@ div::before {
 ```
 ... it will generate the current page number and the total number of pages.
 
-## Concerns
+## Concerns and issues
 
 ### Predefined counter names
 
