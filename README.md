@@ -168,3 +168,9 @@ Most browsers offer to generate some default headers and footers, and they are u
 * author headers / footers only
 
 ### CSSOM
+
+The @page and the at-rules for margins nested inside @page do not define CSSOM interfaces.
+
+Other specs, such as the containment spec, define a CSSOM interface: https://drafts.csswg.org/css-contain-3/#the-csscontainerrule-interface
+
+The css-page spec needs this too.
