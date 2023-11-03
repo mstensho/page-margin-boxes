@@ -112,6 +112,42 @@ div::before {
 
 The spec defines the counter names 'page' and 'pages'. Both are accessible by the document's contents, so that any element may use the counters to tell the current page number, or the total number of pages. Documents that use these counter names without being aware of this feature may be in for a surprise. Furthermore, the 'pages' counter is defined as read-only.
 
+Since these predefined counters are also available to elements inside the document, it means that they may affect layout, which in turn may affect the number of pages. In other words, using counter(pages) on an element in the document, may affect layout, so that it may affect the number of pages.
+
+```html
+<style>
+  @page {
+    size: 600px 100px;
+    margin: 0;
+  }
+  body {
+    margin: 0;
+    line-height: 100px;
+    font: 20px/100px monospace;
+  }
+  div {
+    break-before: page;
+    background: cyan;
+    width: 30ch;
+  }
+  div::after {
+    content: " " counter(pages);
+  }
+</style>
+<div>The total number of pages is</div>
+<div>The total number of pages is</div>
+<div>The total number of pages is</div>
+<div>The total number of pages is</div>
+<div>The total number of pages is</div>
+<div>The total number of pages is</div>
+<div>The total number of pages is</div>
+<div>The total number of pages is</div>
+<div>The total number of pages is</div>
+<div>The total number of pages is</div>
+```
+
+There's room for exactly one line on each page, and the DIVs have room for exactly one digit of the pages count, before the lines wrap. There are 10 pages, but by adding "10" to the DIVs, the lines will wrap, and each DIV will require two lines, and therefore 2 pages. So the final page count will be 20?
+
 ### Unprintable area
 
 Most printers have an area on each side near the paper edge which is unprintable, usually due to the paper handling mechanics of the device. These areas are not exposed to CSS in any way. Instead, the browser usually makes sure that the default margins are large enough to avoid this area for the page area (and with any luck, fit the browser-generated headers and footers in the margin area).
