@@ -72,7 +72,7 @@ This is about implementing chapter 6 of the CSS Paged Media Module Level 3 speci
 
 This includes supporting @page properties. A page may e.g. specify a border, or a font. The @page rule defines a so-called *page context*. Each page has its own page context, which inherits CSS properties from the HTML root element. Margin at-rules (such as e.g. @top-center) inside an @page rule establish a *margin context*, which inherits CSS properties from the page context. CSS counters also need to work when used, incremented, set or defined in page and margin contexts. This includes the special counters named 'page' (current page number) and 'pages' (total number of pages), which are defined here: https://www.w3.org/TR/css-page/#page-based-counters
 
-Note that page or page margin properties are not inherited by the elements in the document (for instance, setting the font in @page doesn't affect elements in the document, but it is inherited by margin contexts).
+Note that page or page margin properties are not inherited by the elements in the document. For instance, setting the font or color for a page or margin context doesn't affect elements in the document, but it is inherited by margin contexts.
 
 ```html
 <style>
@@ -82,18 +82,19 @@ Note that page or page margin properties are not inherited by the elements in th
   @page {
     border: solid; /* blue */
     padding: 1em;
+    font-family: "Comic Sans MS";
 
     @top-center {
       color: hotpink;
-      content: "This is hotpink.";
+      content: "This is hotpink, using a funny font.";
     }
 
     @bottom-center {
-      content: "This is blue.";
+      content: "This is blue, using a funny font.";
     }
   }
 </style>
-<div>This is blue.</div>
+<div>This is blue, using the default font.</div>
 ```
 
 However, elements in the document may access the counters set in these contexts, so that if we have a DIV somewhere on an arbitrary page, and the style is
