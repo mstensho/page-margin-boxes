@@ -66,7 +66,7 @@ Another use case: place a logo in the corner on every page:
 
 ![output](logo.png)
 
-## Details
+## The work to be done
 
 This is about implementing chapter 6 of the CSS Paged Media Module Level 3 specification: https://www.w3.org/TR/css-page-3/#page-properties
 
