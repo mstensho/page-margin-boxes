@@ -75,7 +75,9 @@ This includes supporting @page properties. A page may e.g. specify a border, or 
 Note that page or page margin properties are not inherited by the elements in the document (for instance, setting the font in @page doesn't affect elements in the document, but it is inherited by margin contexts). However, elements in the document may access the counters set in these contexts, so that if we have a DIV somewhere on an arbitrary page, and the style is
 
 ```css
-div::before { content: "This is page " counter(page) " of " counter(pages) ". "; }
+div::before {
+  content: "This is page " counter(page) " of " counter(pages) ". ";
+}
 ```
 ... it will generate the current page number and the total number of pages.
 
