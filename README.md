@@ -110,7 +110,7 @@ div::before {
 
 ### Predefined counter names
 
-The spec defines the counter names 'page' and 'pages'. Both are accessible by the document's contents, so that any element may use the counters to tell the current page number, or the total number of pages. Documents that use these counter names without being aware of this feature may be in for a surprise. Furthermore, the 'pages' counter is defined as read-only.
+The spec defines the counter names 'page' and 'pages'. Both are accessible by the document's contents, so that any element may use the counters to tell the current page number, or the total number of pages. Documents that use these counter names without being aware of this feature may be in for a surprise. Furthermore, the 'pages' counter is defined as read-only, which is an unknown concept as far as https://drafts.csswg.org/css-lists-3/ is concerned.
 
 Since these predefined counters are also available to elements inside the document, it means that they may affect layout, which in turn may affect the number of pages. In other words, using counter(pages) on an element in the document, may affect layout, so that it may affect the number of pages.
 
