@@ -148,14 +148,13 @@ Since these predefined counters are also available to elements inside the docume
 
 There's room for exactly one line on each page, and the DIVs have room for exactly one digit of the pages count, before the lines wrap. There are 10 pages, but by adding "10" to the DIVs, the lines will wrap, and each DIV will require two lines, and therefore 2 pages. So the final page count will be 20?
 
-### Unprintable area
+### Unprintable areas
 
-Most printers have an area on each side near the paper edge which is unprintable, usually due to the paper handling mechanics of the device. These areas are not exposed to CSS in any way. Instead, the browser usually makes sure that the default margins are large enough to avoid this area for the page area (and with any luck, fit the browser-generated headers and footers in the margin area).
+Most printers have an area on each side near the paper edge which is unprintable, usually due to the paper handling mechanics of the printer. These areas are not exposed to CSS in any way (they are typically available to the operating system, though). Instead, the browser usually makes sure that the default margins are large enough to avoid this area for the page area (and with any luck, fit the browser-generated headers and footers in the margin area).
 
-However, by making the entire page box (i.e. including the margins) available to the author, the author has no way of reliably avoiding the unprintable area. With this limitation, when printing the page, we're left with the following options:
-* Allow the margins' contents to end up being clipped by the unprintable area
-* The author to be conservative about how close to the paper edge margin content is placed
-* The page to be scaled down to fit everything, including the margin boxes, within the actual printable area. This will in turn make things smaller than it was supposed to be, so that a centimeter is no longer a centimeter, but something slightly less.
+However, by making the entire page box (i.e. including the margins) available to the author, the author has no way of reliably avoiding the unprintable area. With this limitation, when printing the page, we're left with the following situations:
+* If the author isn't conservative (whatever that means) about how close to the pager edge margin content is placed, the contents of the margin boxes end up being clipped by the unprintable area
+* The page is scaled down to fit everything, including the margin boxes, within the actual printable area. This will in turn make things smaller than it was supposed to be, so that a centimeter is no longer a centimeter, but something slightly less.
 
 ### Custom headless headers / footers?
 
