@@ -6,7 +6,7 @@ Spec: https://www.w3.org/TR/css-page-3/#margin-boxes
 
 ## Introduction
 
-Page margin boxes can be used in paged media (such as printing or when generating PDFs) by authors to define content outside the page area, i.e. in the margin area. This is the area where the browser normally puts headers and footers (which typically may include the document title, URL, time stamp, page number and total number of pages). @page margin boxes enables an author to customize this part of the page - not just at the top and at the bottom, but also on the left and right sides, as well as in the corners. The spec defines 16 margin areas - 4 corners, and 3 parts (beginning, middle, end) on each of the 4 sides. Each area is defined via an @-rule nested inside an @page rule.
+Page margin boxes can be defined in paged media (such as printing or when generating PDFs) by authors, to define content outside the page area, i.e. in the margin area. This is the area where the browser normally puts headers and footers (which typically may include the document title, URL, time stamp, page number and total number of pages), if enabled. @page margin boxes enables an author to customize this part of the page - not just at the top and at the bottom, but also on the left and right sides, as well as in the corners. The spec defines 16 margin areas - 4 corners, and 3 parts (beginning, middle, end) on each of the 4 sides. Each area is defined via an @-rule nested inside an @page rule.
 
 See the figure at https://www.w3.org/TR/css-page-3/#page-model
 
@@ -68,11 +68,16 @@ Another use case: place a logo in the corner on every page:
 
 ## Details
 
-Implement chapter 6 of the CSS Paged Media Module Level 3: https://www.w3.org/TR/css-page-3/#page-properties
+This is about implementing chapter 6 of the CSS Paged Media Module Level 3 specification: https://www.w3.org/TR/css-page-3/#page-properties
 
-This includes @page properties. A page may e.g. specify a border, or a font. @page defines a so-called page context. The page context inherits properties from the HTML root element. Margin at-rules inside an @page rule establish a page margin context, which inherits properties from the page context. Counters need to work when used, incremented, set or defined in page contexts and page margin contexts. This includes the special counters named 'page' (current page number) and 'pages' (total number of pages).
+This includes supporting @page properties. A page may e.g. specify a border, or a font. @page defines a so-called *page context*. Each page has its own page context, which inherits CSS properties from the HTML root element. Margin at-rules (such as e.g. @top-center) inside an @page rule establish a *margin context*, which inherits CSS properties from the page context. CSS counters also need to work when used, incremented, set or defined in page and margin contexts. This includes the special counters named 'page' (current page number) and 'pages' (total number of pages), which are defined here: https://www.w3.org/TR/css-page/#page-based-counters
 
-Note that page or page margin properties are not inherited by the elements in the document (setting the font in @page doesn't affect elements in the document, but it is inherited by page margin contexts). However, elements in the document may access the counters set in these contexts.
+Note that page or page margin properties are not inherited by the elements in the document (for instance, setting the font in @page doesn't affect elements in the document, but it is inherited by margin contexts). However, elements in the document may access the counters set in these contexts, so that if we have a DIV somewhere on an arbitrary page, and the style is
+
+```css
+div::before { content: "This is page " counter(page) " of " counter(pages) ". "; }
+```
+... it will generate the current page number and the total number of pages.
 
 ## Concerns
 
